@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: black;
+            font-family: arial;
+            color: white
+        }
+        
+        h1 {
+            color: grey;
+            font-family: verdana
+        }
+        
+        .maindiv {
+            background-color: white;
+            color: black;
+            width: 300px;
+            padding: 20px;
+            border-radius: 25px;
+            box-align: center
+        }
+    </style>
+    <script>
+        var principal = document.getElementById("principal").value;
+        var rate = document.getElementById("rate").value;
+        var years = document.getElementById("years").value;
+        var interest = principal * years * rate / 100;
+        var year = new Date().getFullYear() + parseInt(years);
+
+        function updateRate() {
+            var rateval = document.getElementById("rate").value;
+            document.getElementById("rate_val").innerText = rateval;
+            document.getElementById("result").innerHTML = "If you deposit " + principal + ",\<br\>at an interest rate of " + rate + "%\<br\>You will receive an amount of " + amount + ",\<br\>in the year " + year + "\<br\>"
+        }
+    </script>
+    <title>
+        Web App- a simple interest calculator
+    </title>
+</head>
+
+<body>
+    <div class="maindiv">
+        <h1 style="color: grey">SIMPLE INTEREST CALCULATOR </h1>Amount <input type="number" id="principal"></br>Interest rate <input type="range" id="interest" min="1" max="20" value="10"><span id="rate_val">12.5% </span></br>No. Of Years <input type=" number " id="years ">
+        <select id="years">
+            <option value="1">1 </option>
+            <option value="2">2 </option>
+            <option value="3">3 </option>
+            <option value="4">4 </option>
+            <option value="5">5 </option>
+            <option value="6">6 </option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            </select>
+        </br>Interest:<span id=" result "></span><button onclick="compute() ">Compute Interest</button><span id="result"></span>
+        <footer>&#169; This Calculator belongs to Angel </footer>
+    </div>
+</body>
+
+</html>
